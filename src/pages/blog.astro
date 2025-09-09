@@ -11,3 +11,4 @@ const allPosts = Object.values(await import.meta.glob('./posts/*.md', { eager: t
     {allPosts.map((post:any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
   </ul>
 </BaseLayout>
+
