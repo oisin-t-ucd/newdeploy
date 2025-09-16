@@ -3,13 +3,16 @@ const { messages } = Astro.props;
 ---
 
 <div>
-  <h3><span> </span>! Thank you for visiting!</h3>
-  <button> New Greeting </button>
+  <h3>
+    <span id="message-container">{messages[0]} </span>! Thank you for visiting!
+  </h3>
+  <button id="my-button"> New Greeting </button>
 </div>
 
 <script define:vars={{ messages }}>
-  document.querySelector("button").addEventListener("click", function (e) {
-    document.querySelector("span").innerText =
+  console.log(messages);
+  document.querySelector("#my-button").addEventListener("click", function (e) {
+    document.querySelector("#message-container").innerText =
       messages[Math.floor(Math.random() * messages.length)];
   });
 </script>
