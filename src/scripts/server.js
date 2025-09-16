@@ -1,28 +1,25 @@
 import { Server, Model } from "miragejs";
 
-export function makeServer({ environment = "development" } = {}) {
-    let res = fetch('/newdeploy/posts.json').then(res => res.json())
-        .then(initialPosts => {
+export async function makeServer(initialData = {}) {
 
-            let server = new Server({
-                environment,
-                models: { post: Model },
-                seeds(server) {
-                    server.db.loadData({ posts: initialPosts });
-                },
-                routes() {
-                    this.namespace = 'api';
-                    this.get('/posts');
-                    this.get('/posts/:id');
-                    this.post('/posts');
-                    this.put('/posts/:id');
-                    this.patch('/posts/:id');
-                    this.del('/posts/:id');
-                }
-            })
-            console.log(server)
-            return server
-        });
-    return res
-
+    // let res = await fetch('/newdeploy/posts.json') // here 'newdeploy' should be replaced with the name of your GitHub repository which is also the astro 'base' in astro.config.mjs
+    // let data = await res.json()
+    console.log(initialData)
+    let server = new Server({
+        environment: "development",
+        models: { post: Model },
+        seeds(server) {
+            server.db.loadData({ posts: initialData });
+        },
+        routes() {
+            this.namespace = 'api'; // remember to include this when making requests
+            this.get('/posts');
+            this.get('/posts/:id');
+            this.post('/posts');
+            this.put('/posts/:id');
+            this.patch('/posts/:id');
+            this.del('/posts/:id');
+        }
+    })
+    return server
 }

@@ -14,33 +14,9 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
     <script>
       import { makeServer } from "../scripts/server.js";
-
-      let server = makeServer().then(result => {
-        console.log('returned server:', result)
-        const apiUrl = "/api/posts";
-  
-        // Fetch JSON data from the API
-        fetch(apiUrl)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(
-                "Network response was not ok " + response.statusText,
-              );
-            }
-            return response.json(); // Parse JSON body
-          })
-          .then((data) => {
-            console.log("Fetched JSON data:", data);
-            // You can use the data object here
-          })
-          .catch((error) => {
-            console.error("Fetch error:", error);
-          });
-
-      }
-
-      );
-      // URL of the API endpoint
+      import jsonData from "../data/posts.json";
+      console.log(jsonData)
+      await makeServer(jsonData);
     </script>
   </head>
   <body>
