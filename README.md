@@ -1,7 +1,50 @@
-# Astro "Build a Blog" Project - Completed
+# Project Title
 
-This is the project you'll build with the [Astro Tutorial](https://docs.astro.build/en/tutorial/0-introduction/). Use this code to compare to your own, or explore to see how the basics of a blog are built in Astro!
+## Project Overview
 
-This branch contains the state of the project after completing the basic tutorial, [Unit 6.3](https://docs.astro.build/en/tutorial/6-islands/3/).
+Description of the project and its primary features.
 
-The [`content collections`](https://github.com/withastro/blog-tutorial-demo/tree/content-collections) branch is the completed project branch after the optional Content Collections extension in unit [6.4](https://docs.astro.build/en/tutorial/6-islands/4/).
+## Features
+
+- ##### Feature 1:
+    Description of feature 1
+
+- ##### Feature 2:
+    Description of feature 2
+
+(...continue for additional features)
+
+
+## Technologies used
+
+#### Languages & Frameworks
+
+- HTML
+- CSS
+- JavaScript
+- [Astro](https://astro.build/)
+
+#### Third-Party APIs
+
+- [Open Weather API](https://openweathermap.org/api)
+
+#### Development Tools
+
+- VSCode
+- Google Chrome
+- Git
+- GitHub
+- GitHub Pages
+
+#### Deployment process:
+
+- Follow the guide [here](https://docs.github.com/en/pages/quickstart) to set up Github Pages
+- Follow the guide [here](https://docs.astro.build/en/guides/deploy/github/) to deploy the repository
+
+
+#### Development Process:
+
+
+#### Credits/Acknowledgements:
+
+- [Lightbox tutorial](URL)
