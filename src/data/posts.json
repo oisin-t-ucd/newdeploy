@@ -1,24 +1,24 @@
 [
   {
-    "image_url": "/newdeploy/src/images/post_image.png",
+    "image_url": "/newdeploy/images/post_image.png",
     "id": "1",
     "title": "First Post",
     "content": "Data loaded my MirageJS!"
   },
   {
-    "image_url": "/newdeploy/src/images/post_image.png",
+    "image_url": "/newdeploy/images/post_image.png",
     "id": "2",
     "title": "Second Post",
     "content": "loremLorem ipsum dolor sit amet consectetur adipisicing elit. Sit nesciunt, nemo praesentium autem, iste optio eligendi reiciendis maiores qui repellendus corrupti, aut eaque eos quae. Commodi, illum? Aut, ut quasi?"
   },
   {
-    "image_url": "/newdeploy/src/images/post_image.png",
+    "image_url": "/newdeploy/images/post_image.png",
     "id": "3",
     "title": "Second Post",
     "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nesciunt, nemo praesentium autem, iste optio eligendi reiciendis maiores qui repellendus corrupti, aut eaque eos quae. Commodi, illum? Aut, ut quasi?."
   },
   {
-    "image_url": "/newdeploy/src/images/post_image.png",
+    "image_url": "/newdeploy/images/post_image.png",
     "id": "4",
     "title": "Fourth Post",
     "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nesciunt, nemo praesentium autem, iste optio eligendi reiciendis maiores qui repellendus corrupti, aut eaque eos quae. Commodi, illum? Aut, ut quasi?."
