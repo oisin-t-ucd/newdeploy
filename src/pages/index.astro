@@ -1,9 +1,11 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Greeting from '../components/Greeting.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Greeting from "../components/Greeting.astro";
 const pageTitle = "Home Page";
 ---
+
 <BaseLayout pageTitle={pageTitle}>
   <h2>My awesome blog subtitle</h2>
   <Greeting messages={["Hej", "Hallo", "Hola", "Habari"]} />
+  <img src="newdeploy/images/background_image.jpg" />
 </BaseLayout>

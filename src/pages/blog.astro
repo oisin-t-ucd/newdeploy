@@ -10,7 +10,11 @@ const pageTitle = "My Astro Learning Blog";
   <ul>...loading</ul>
 </BaseLayout>
 <script>
+  import { makeServer } from "../scripts/server.js";
+  import jsonData from "../data/posts.json";
   async function loadPosts() {
+    console.log(jsonData);
+    await makeServer(jsonData);
     // await makeServer(); // wait for the server to be run
     const apiUrl = "/api/posts"; // the 'api' part is the 'namespace' that's set in server.js
     let response = await fetch(apiUrl);
