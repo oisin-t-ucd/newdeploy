@@ -14,29 +14,29 @@ const pageTitle = "My Astro Learning Blog";
   </div>
 </BaseLayout>
 <script>
-  import { makeServer } from "../scripts/server.js";
-  import jsonData from "../data/posts.json";
+  import { makeServer } from "../scripts/server.js"; //import our makeServer function
   async function loadPosts() {
-    await makeServer(jsonData); // run the server first
+    // the function needs to be async as we're using await below
+    await makeServer(); // run the server first, make sure to use 'await'
     const apiUrl = "/api/posts"; // the 'api' part is the 'namespace' that's set in server.js
     let response = await fetch(apiUrl);
-    let data = await response.json(); // now you can display the data on the page
-    console.log(data);
+    let data = await response.json();
+    console.log(data); // use a console.log for testing/debugging to verify that the data is loaded correctly
+    // now you can display the data on the page
     let html = "";
-    data.posts.map(
-      (post) =>
-        (html += `
-      <div class="card" style="width: 18rem;">
-  <img src="${post.image_url}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">${post.title}</h5>
-    <p class="card-text">${post.content}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-      `), // create a HTML string for our list of posts
-    );
-
+    for (let post of data.posts) {
+      // create a HTML string for our list of posts, here we're accessing the properties of each object seen in src/data/posts.json
+      html += `
+        <div class="card" style="width: 18rem;">
+          <img src="${post.image_url}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">${post.title}</h5>
+            <p class="card-text">${post.content}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      `;
+    }
     document.querySelector("#post-container").innerHTML = html;
   }
   loadPosts();
