@@ -7,7 +7,11 @@ const pageTitle = "My Astro Learning Blog";
 
 <BaseLayout pageTitle={pageTitle}>
   <p>This is where I will post about my journey learning Astro.</p>
-  <ul>...loading</ul>
+  <div class="container-fluid">
+    <div id="post-container" class="row">
+      <ul>...loading</ul>
+    </div>
+  </div>
 </BaseLayout>
 <script>
   import { makeServer } from "../scripts/server.js";
@@ -20,10 +24,20 @@ const pageTitle = "My Astro Learning Blog";
     console.log(data);
     let html = "";
     data.posts.map(
-      (post) => (html += `<li><a href=${post.url}>${post.title}</a></li>`), // create a HTML string for our list of posts
+      (post) =>
+        (html += `
+      <div class="card" style="width: 18rem;">
+  <img src="${post.image_url}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${post.title}</h5>
+    <p class="card-text">${post.content}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+      `), // create a HTML string for our list of posts
     );
 
-    document.querySelector("ul").innerHTML = html;
+    document.querySelector("#post-container").innerHTML = html;
   }
   loadPosts();
 </script>
