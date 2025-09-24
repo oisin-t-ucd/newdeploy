@@ -13,10 +13,7 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <script>
-      import { makeServer } from "../scripts/server.js";
-      import jsonData from "../data/posts.json";
-      console.log(jsonData)
-      await makeServer(jsonData);
+      
     </script>
   </head>
   <body>

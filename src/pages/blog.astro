@@ -13,16 +13,14 @@ const pageTitle = "My Astro Learning Blog";
   import { makeServer } from "../scripts/server.js";
   import jsonData from "../data/posts.json";
   async function loadPosts() {
-    console.log(jsonData);
-    await makeServer(jsonData);
-    // await makeServer(); // wait for the server to be run
+    await makeServer(jsonData); // run the server first
     const apiUrl = "/api/posts"; // the 'api' part is the 'namespace' that's set in server.js
     let response = await fetch(apiUrl);
     let data = await response.json(); // now you can display the data on the page
     console.log(data);
     let html = "";
     data.posts.map(
-      (post) => (html += `<li><a href=${post.url}>${post.title}</a></li>`),
+      (post) => (html += `<li><a href=${post.url}>${post.title}</a></li>`), // create a HTML string for our list of posts
     );
 
     document.querySelector("ul").innerHTML = html;
